@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/student2/Рабочий стол/Cells_Eclipse-master2/app/src/main/AndroidManifest.xml:2:1-29:12
+ADDED from /home/student2/Рабочий стол/Cells_Eclipse-master2/app/src/main/AndroidManifest.xml:2:1-33:12
 	package
 		ADDED from /home/student2/Рабочий стол/Cells_Eclipse-master2/app/src/main/AndroidManifest.xml:3:5-40
 		INJECTED from /home/student2/Рабочий стол/Cells_Eclipse-master2/app/src/main/AndroidManifest.xml
@@ -18,6 +18,9 @@ ADDED from /home/student2/Рабочий стол/Cells_Eclipse-master2/app/src/
 uses-sdk
 ADDED from /home/student2/Рабочий стол/Cells_Eclipse-master2/app/src/main/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:support-v4:22.2.1] /home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/AndroidManifest.xml:20:5-43
+MERGED from [com.google.android.gms:play-services-appindexing:8.1.0] /home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.1.0/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] /home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:22.2.1] /home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
 		ADDED from /home/student2/Рабочий стол/Cells_Eclipse-master2/app/src/main/AndroidManifest.xml:9:9-38
 		INJECTED from /home/student2/Рабочий стол/Cells_Eclipse-master2/app/src/main/AndroidManifest.xml
@@ -27,7 +30,10 @@ MERGED from [com.android.support:support-v4:22.2.1] /home/student2/Рабочи�
 		INJECTED from /home/student2/Рабочий стол/Cells_Eclipse-master2/app/src/main/AndroidManifest.xml
 		INJECTED from /home/student2/Рабочий стол/Cells_Eclipse-master2/app/src/main/AndroidManifest.xml
 application
-ADDED from /home/student2/Рабочий стол/Cells_Eclipse-master2/app/src/main/AndroidManifest.xml:11:5-27:19
+ADDED from /home/student2/Рабочий стол/Cells_Eclipse-master2/app/src/main/AndroidManifest.xml:11:5-31:19
+MERGED from [com.android.support:support-v4:22.2.1] /home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-appindexing:8.1.0] /home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.1.0/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] /home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/AndroidManifest.xml:20:5-24:19
 MERGED from [com.android.support:support-v4:22.2.1] /home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from /home/student2/Рабочий стол/Cells_Eclipse-master2/app/src/main/AndroidManifest.xml:14:9-41
@@ -55,3 +61,10 @@ category#android.intent.category.LAUNCHER
 ADDED from /home/student2/Рабочий стол/Cells_Eclipse-master2/app/src/main/AndroidManifest.xml:24:17-77
 	android:name
 		ADDED from /home/student2/Рабочий стол/Cells_Eclipse-master2/app/src/main/AndroidManifest.xml:24:27-74
+meta-data#com.google.android.gms.version
+ADDED from /home/student2/Рабочий стол/Cells_Eclipse-master2/app/src/main/AndroidManifest.xml:28:9-30:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] /home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from /home/student2/Рабочий стол/Cells_Eclipse-master2/app/src/main/AndroidManifest.xml:30:13-66
+	android:name
+		ADDED from /home/student2/Рабочий стол/Cells_Eclipse-master2/app/src/main/AndroidManifest.xml:29:13-58

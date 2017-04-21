@@ -1,2 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="25.0.2"
+        sha1="12c271efd391ebb5e86773f3b3b08d869228a9ff">
+        <dex dex="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_317e10b3f0ee1ffcaf3712c7a778a4f80446c697.jar" />
+    </item>
+    <item
+        jar="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.1.0/jars/classes.jar"
+        jumboMode="true"
+        revision="25.0.2"
+        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
+        <dex dex="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-appindexing-8.1.0_cabe9a894c62e05c4151ca1271544fb4feeff315.jar" />
+    </item>
+    <item
+        jar="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/jars/classes.jar"
+        jumboMode="true"
+        revision="25.0.2"
+        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
+        <dex dex="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-8.1.0_2644fa6a479588e7c673f3eaed26a5181bbfa02e.jar" />
+    </item>
+
+</items>

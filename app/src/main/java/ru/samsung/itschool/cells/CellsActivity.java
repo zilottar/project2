@@ -5,6 +5,11 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +18,11 @@ import android.view.View.OnLongClickListener;
 import android.widget.Button;
 import android.widget.GridLayout;
 
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
+
+import java.io.*;
 
 
 public class CellsActivity extends Activity implements OnClickListener,
@@ -23,6 +33,15 @@ public class CellsActivity extends Activity implements OnClickListener,
 	int HEIGHT = 2;
 
 	Button[][] cell;
+	/**
+	 * ATTENTION: This was auto-generated to implement the App Indexing API.
+	 * See https://g.co/AppIndexing/AndroidStudio for more information.
+	 */
+
+	private DatabaseHelper mDBHelper;
+	private SQLiteDatabase mDb;
+
+	private GoogleApiClient client;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +50,25 @@ public class CellsActivity extends Activity implements OnClickListener,
 		setContentView(R.layout.cells);
 
 		generate();
+		mDBHelper = new DatabaseHelper(this);
 
+		try {
+			mDBHelper.updateDataBase();
+		} catch (IOException mIOException) {
+			throw new Error("UnableToUpdateDatabase");
+		}
+
+		try {
+			mDb = mDBHelper.getWritableDatabase();
+		} catch (SQLException mSQLException) {
+			throw mSQLException;
+		}
+		// ATTENTION: This was auto-generated to implement the App Indexing API.
+		// See https://g.co/AppIndexing/AndroidStudio for more information.
+		client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 	}
 
 	void generate() {
-
 
 
 		makeCells();
@@ -49,20 +82,19 @@ public class CellsActivity extends Activity implements OnClickListener,
 	public boolean onLongClick(View v) {
 		return false;
 	}
+
 	public void onClick(View v) {
 
 		Button tappedCell = (Button) v;
-
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(CellsActivity.this);
 
 		int tappedX = getX(tappedCell);
 		int tappedY = getY(tappedCell);
-		if (tappedX==0&&tappedY==0)
-		{
-
+		if (tappedX == 0 && tappedY == 0) {
+			Cursor cursor = mDb.rawQuery("SELECT desc FROM base where  elements='"+tappedCell.getText()+"'", null);
 			builder.setTitle("Литий")
-					.setMessage("")
+					.setMessage(cursor.getString(0))
 					.setIcon(R.drawable.ic_launcher)
 					.setCancelable(false)
 					.setNegativeButton("Продолжить изучение",
@@ -73,11 +105,12 @@ public class CellsActivity extends Activity implements OnClickListener,
 							});
 			AlertDialog alert = builder.create();
 			alert.show();
+			cursor.close();
 		}
-		if (tappedX==1&&tappedY==0)
-		{
+		if (tappedX == 1 && tappedY == 0) {
+			Cursor cursor = mDb.rawQuery("SELECT desc FROM base where  elements='"+tappedCell.getText()+"'", null);
 			builder.setTitle("Бериллий")
-					.setMessage("Бериллий - элемент второй группы основной подгруппы")
+					.setMessage(cursor.getString(0))
 					.setIcon(R.drawable.ic_launcher)
 					.setCancelable(false)
 					.setNegativeButton("Продолжить изучение",
@@ -88,39 +121,12 @@ public class CellsActivity extends Activity implements OnClickListener,
 							});
 			AlertDialog alert = builder.create();
 			alert.show();
+			cursor.close();
 		}
-		if (tappedX==2&&tappedY==0)
-		{
+		if (tappedX == 2 && tappedY == 0) {
+			Cursor cursor = mDb.rawQuery("SELECT desc FROM base where  elements='"+tappedCell.getText()+"'", null);
 			builder.setTitle("Натрий")
-					.setMessage("Натрий — элемент первой группы, третьего периода периодической" +
-							" системы химических элементов Д. И. Менделеева, с атомным номером 11."+
-							" Обозначается символом Na.\n\nПОЛУЧЕНИЕ\n" +
-							"\n"+"Первым промышленным способом " +
-							"получения натрия была реакция восстановления карбоната натрия" +
-							" углем при нагревании тесной смеси этих веществ в железной" +
-							" ёмкости до 1000 °C (способ Девилля)[13]:\n" +
-							"\n" +
-							"Na2CO3+2C=>2Na+3CO.\n\n" +
-							"Вместо угля могут быть использованы карбид кальция, алюминий, " +
-							"кремний, ферросилиций, силикоалюминий[14][15].\n" +
-							"С появлением электроэнергетики более практичным стал другой с" +
-							"пособ получения натрия — электролиз расплава едкого натра или " +
-							"хлорида натрия. В настоящее время электролиз — основной" +
-							" способ получения натрия.\n" +
-							"Натрий также можно получить цирконийтермическим " +
-							"методом или термическим разложением азида натрия. \n" +
-							"\nФИЗИЧЕСКИЕ СВОЙСТВА\n" +
-							"\nНатрий — серебристо-белый металл, в тонких слоях с фиолетовым отт" +
-							"енком, пластичен, даже мягок (легко режется ножом), свежий срез натр" +
-							"ия блестит. Величины электропроводности и теплопроводно" +
-							"сти натрия достаточно высоки, плотность равна 0,96842 г/см³ (при " +
-							"19,7 °C), температура плавления 97,86 °C, температура кипен" +
-							"ия 883,15 °C.\n"+
-							"Под давлением становится прозрачным и красным, как рубин[16]." +
-							"\n" +
-							"При температуре −268 °С (5 К) натрий переходит в гексагональн" +
-							"ую фазу, пространственная группа P 63/mmc, параметры ячей" +
-							"ки a = 0,3767 нм, c = 0,6154 нм, Z = 2.")
+					.setMessage(cursor.getString(0))
 					.setIcon(R.drawable.ic_launcher)
 					.setCancelable(false)
 					.setNegativeButton("Продолжить изучение",
@@ -131,51 +137,12 @@ public class CellsActivity extends Activity implements OnClickListener,
 							});
 			AlertDialog alert = builder.create();
 			alert.show();
+			cursor.close();
 		}
-		if (tappedX==3&&tappedY==0)
-		{
+		if (tappedX == 3 && tappedY == 0) {
+			Cursor cursor = mDb.rawQuery("SELECT desc FROM base where  elements='"+tappedCell.getText()+"'", null);
 			builder.setTitle("Магний")
-					.setMessage("Магний - элемент второй группы, третьего периода периодической" +
-							" системы химических элементов Д. И. Менделеева, с атомным номером " +
-							"12. Обозначается символом Mg.\n\n" +
-							"ФИЗИЧЕСКИЕ СВОЙСТВА\n" +
-							"Магний — металл серебристо-белого цвета с гексагональной " +
-							"решёткой, обладает металлическим блеском; пространственная группа" +
-							" P 63/mmc, параметры решётки a = 0,32029 нм, c = 0,52000 нм, Z = 2." +
-							" При обычных условиях поверхность магния покрыта прочной защитной" +
-							" плёнкой оксида магния MgO, которая разрушается при нагреве на" +
-							" воздухе до примерно 600 °C, после чего металл сгорает с ослепительно"+
-							" белым пламенем с образованием оксида и нитрида магния Mg3N2. " +
-							"Скорость воспламенения магния намного выше скорости одёргивания " +
-							"руки, поэтому при поджоге магния человек не успевает одёрнуть руку" +
-							" и получает ожог. На горящий магний желательно смотреть только через" +
-							" темные очки или стекло, т.к. в противном случае есть риск получить " +
-							"световой ожог сетчатки и на время ослепнуть. Плотность магния при " +
-							"20 °C — 1,738 г/см³, температура плавления металла tпл = 650 °C, " +
-							"температура кипения tкип = 1090 °C[2], теплопроводность при 20 °C " +
-							"— 156 Вт/(м·К).\n" +
-							"\n" +
-							"Магний высокой чистоты пластичен, хорошо прессуется, прокатывается " +
-							"и поддаётся обработке резанием.\n\n" +
-							"ХИМИЧЕСКИЕ СВОЙСТВА\n" +
-							"При нагревании на воздухе магний сгорает с образованием оксида и" +
-							" небольшого количества нитрида. При этом выделяется большое кол" +
-							"ичество теплоты и световой энергии:\n"+
-							"2Mg+O2=>2MgO\n" +
-							"{3Mg+N2=>Mg3N2\n" +
-							"Магний может гореть даже в углекислом газе:\n" +
-							"2Mg+CO2=>2MgO+C\n" +
-							"Раскаленный магний энергично реагирует с водой, вследствие чего " +
-							"горящий магний нельзя тушить водой:\n" +
-							"Mg+H2O=>MgO+H2\n" +
-							"Возможна также реакция:\n" +
-							"\n" +
-							"Mg+2H2O=>Mg(OH)2+H2\n" +
-							"Щелочи на магний не действуют, в кислотах он растворяется с бурным " +
-							"выделением водорода:\n" +
-							"Mg+2HCl=>MgCl2+H2\n" +
-							"Магний со взрывом реагирует с сильными окислителями типа порошк" +
-							"ового перманганата калия.")
+					.setMessage(cursor.getString(0))
 					.setIcon(R.drawable.ic_launcher)
 					.setCancelable(false)
 					.setNegativeButton("Продолжить изучение",
@@ -186,11 +153,12 @@ public class CellsActivity extends Activity implements OnClickListener,
 							});
 			AlertDialog alert = builder.create();
 			alert.show();
+			cursor.close();
 		}
-		if (tappedX==4&&tappedY==0)
-		{
+		if (tappedX == 4 && tappedY == 0) {
+			Cursor cursor = mDb.rawQuery("SELECT desc FROM base where  elements='"+tappedCell.getText()+"'", null);
 			builder.setTitle("Калий")
-					.setMessage("Калий - элемент первой группы основной подгруппы")
+					.setMessage(cursor.getString(0))
 					.setIcon(R.drawable.ic_launcher)
 					.setCancelable(false)
 					.setNegativeButton("Продолжить изучение",
@@ -201,11 +169,12 @@ public class CellsActivity extends Activity implements OnClickListener,
 							});
 			AlertDialog alert = builder.create();
 			alert.show();
+			cursor.close();
 		}
-		if (tappedX==5&&tappedY==0)
-		{
+		if (tappedX == 5 && tappedY == 0) {
+			Cursor cursor = mDb.rawQuery("SELECT desc FROM base where  elements='"+tappedCell.getText()+"'", null);
 			builder.setTitle("Кальций")
-					.setMessage("Кальций - элемент второй группы основной подгруппы")
+					.setMessage(cursor.getString(0))
 					.setIcon(R.drawable.ic_launcher)
 					.setCancelable(false)
 					.setNegativeButton("Продолжить изучение",
@@ -216,11 +185,12 @@ public class CellsActivity extends Activity implements OnClickListener,
 							});
 			AlertDialog alert = builder.create();
 			alert.show();
+			cursor.close();
 		}
-		if (tappedX==0&&tappedY==1)
-		{
+		if (tappedX == 0 && tappedY == 1) {
+			Cursor cursor = mDb.rawQuery("SELECT desc FROM base where  elements='"+tappedCell.getText()+"'", null);
 			builder.setTitle("Рубидий")
-					.setMessage("Рубидий - элемент первой группы основной подгруппы")
+					.setMessage(cursor.getString(0))
 					.setIcon(R.drawable.ic_launcher)
 					.setCancelable(false)
 					.setNegativeButton("Продолжить изучение",
@@ -231,11 +201,12 @@ public class CellsActivity extends Activity implements OnClickListener,
 							});
 			AlertDialog alert = builder.create();
 			alert.show();
+			cursor.close();
 		}
-		if (tappedX==1&&tappedY==1)
-		{
+		if (tappedX == 1 && tappedY == 1) {
+			Cursor cursor = mDb.rawQuery("SELECT desc FROM base where  elements='"+tappedCell.getText()+"'", null);
 			builder.setTitle("Стронций")
-					.setMessage("Стронций - элемент второй группы основной подгруппы")
+					.setMessage(cursor.getString(0))
 					.setIcon(R.drawable.ic_launcher)
 					.setCancelable(false)
 					.setNegativeButton("Продолжить изучение",
@@ -246,11 +217,12 @@ public class CellsActivity extends Activity implements OnClickListener,
 							});
 			AlertDialog alert = builder.create();
 			alert.show();
+			cursor.close();
 		}
-		if (tappedX==2&&tappedY==1)
-		{
+		if (tappedX == 2 && tappedY == 1) {
+			Cursor cursor = mDb.rawQuery("SELECT desc FROM base where  elements='"+tappedCell.getText()+"'", null);
 			builder.setTitle("Цезий")
-					.setMessage("Цезий - элемент первой группы основной подгруппы")
+					.setMessage(cursor.getString(0))
 					.setIcon(R.drawable.ic_launcher)
 					.setCancelable(false)
 					.setNegativeButton("Продолжить изучение",
@@ -261,11 +233,12 @@ public class CellsActivity extends Activity implements OnClickListener,
 							});
 			AlertDialog alert = builder.create();
 			alert.show();
+			cursor.close();
 		}
-		if (tappedX==3&&tappedY==1)
-		{
+		if (tappedX == 3 && tappedY == 1) {
+			Cursor cursor = mDb.rawQuery("SELECT desc FROM base where  elements='"+tappedCell.getText()+"'", null);
 			builder.setTitle("Барий")
-					.setMessage("Барий - элемент второй группы основной подгруппы")
+					.setMessage(cursor.getString(0))
 					.setIcon(R.drawable.ic_launcher)
 					.setCancelable(false)
 					.setNegativeButton("Продолжить изучение",
@@ -276,13 +249,14 @@ public class CellsActivity extends Activity implements OnClickListener,
 							});
 			AlertDialog alert = builder.create();
 			alert.show();
+			cursor.close();
 		}
-		if (tappedX==4&&tappedY==1)
-		{
+		if (tappedX == 4 && tappedY == 1) {
+			Cursor cursor = mDb.rawQuery("SELECT desc FROM base where  elements='"+tappedCell.getText()+"'", null);
+
+			String a = "hint";
 			builder.setTitle("Hint")
-					.setMessage("Нажмите на любой элемент. Нажатие на элемент приведет к" +
-							" появлению информации о данном элементе. Для того, чтобы закончить" +
-							" изучение данного элемента, нажмите на кнопку ПРОДОЛЖИТЬ ИЗУЧЕНИЕ")
+					.setMessage(cursor.getString(0))
 					.setIcon(R.drawable.ic_launcher)
 					.setCancelable(false)
 					.setNegativeButton("Продолжить изучение",
@@ -293,17 +267,16 @@ public class CellsActivity extends Activity implements OnClickListener,
 							});
 			AlertDialog alert = builder.create();
 			alert.show();
+			cursor.close();
 		}
 	}
 
-	int getX(View v)
-	{
-		return Integer.parseInt(((String)v.getTag()).split(",")[1]);
+	int getX(View v) {
+		return Integer.parseInt(((String) v.getTag()).split(",")[1]);
 	}
 
-	int getY(View v)
-	{
-		return Integer.parseInt(((String)v.getTag()).split(",")[0]);
+	int getY(View v) {
+		return Integer.parseInt(((String) v.getTag()).split(",")[0]);
 	}
 
 	void makeCells() {
@@ -318,7 +291,7 @@ public class CellsActivity extends Activity implements OnClickListener,
 				cell[i][j] = (Button) inflater.inflate(R.layout.cell, cellsLayout, false);
 				cell[i][j].setOnClickListener(this);
 				cell[i][j].setOnLongClickListener(this);
-				cell[i][j].setTag(i+","+j);
+				cell[i][j].setTag(i + "," + j);
 				cellsLayout.addView(cell[i][j]);
 			}
 		cell[0][0].setText("Li");
@@ -336,7 +309,43 @@ public class CellsActivity extends Activity implements OnClickListener,
 	}
 
 
+	@Override
+	public void onStart() {
+		super.onStart();
 
+		// ATTENTION: This was auto-generated to implement the App Indexing API.
+		// See https://g.co/AppIndexing/AndroidStudio for more information.
+		client.connect();
+		Action viewAction = Action.newAction(
+				Action.TYPE_VIEW, // TODO: choose an action type.
+				"Cells Page", // TODO: Define a title for the content shown.
+				// TODO: If you have web page content that matches this app activity's content,
+				// make sure this auto-generated web page URL is correct.
+				// Otherwise, set the URL to null.
+				Uri.parse("http://host/path"),
+				// TODO: Make sure this auto-generated app URL is correct.
+				Uri.parse("android-app://ru.samsung.itschool.cells/http/host/path")
+		);
+		AppIndex.AppIndexApi.start(client, viewAction);
+	}
 
+	@Override
+	public void onStop() {
+		super.onStop();
 
+		// ATTENTION: This was auto-generated to implement the App Indexing API.
+		// See https://g.co/AppIndexing/AndroidStudio for more information.
+		Action viewAction = Action.newAction(
+				Action.TYPE_VIEW, // TODO: choose an action type.
+				"Cells Page", // TODO: Define a title for the content shown.
+				// TODO: If you have web page content that matches this app activity's content,
+				// make sure this auto-generated web page URL is correct.
+				// Otherwise, set the URL to null.
+				Uri.parse("http://host/path"),
+				// TODO: Make sure this auto-generated app URL is correct.
+				Uri.parse("android-app://ru.samsung.itschool.cells/http/host/path")
+		);
+		AppIndex.AppIndexApi.end(client, viewAction);
+		client.disconnect();
+	}
 }
