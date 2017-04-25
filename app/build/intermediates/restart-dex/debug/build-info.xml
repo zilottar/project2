@@ -4,45 +4,30 @@
     api-level="19"
     density="mdpi"
     format="7"
-    timestamp="84968738916937"
-    token="2432737719910573608"
-    verifier="COMPATIBLE" >
+    timestamp="123181457778748"
+    token="2432737719910573608" >
 
     <task
         name="javac"
-        duration="779" />
+        duration="1059" />
     <task
         name="instant-run-dex"
-        duration="3333" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="120" />
+        duration="394" />
     <task
         name="verifier"
-        duration="18" />
+        duration="49" />
 
     <artifact
-        location="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/reload-dex/debug/classes.dex"
-        type="RELOAD_DEX" />
+        location="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/outputs/apk/app-debug.apk"
+        type="MAIN" />
 
-    <build timestamp="83944817432820" >
+    <build timestamp="123181457778748" >
         <artifact
             location="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
-    </build>
-    <build
-        timestamp="84521044783910"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/builds/debug/84521044783910/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="84968738916937"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/reload-dex/debug/classes.dex"
-            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

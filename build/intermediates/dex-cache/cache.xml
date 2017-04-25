@@ -2,18 +2,39 @@
 <items version="2" >
 
     <item
+        jar="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="25.0.2"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-22.2.1_4b4f73989e4c57dba29bb610ec1fa61fba5ca6fd.jar" />
+    </item>
+    <item
         jar="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         revision="25.0.2"
-        sha1="12c271efd391ebb5e86773f3b3b08d869228a9ff">
+        sha1="5b34fb8ba863ce902a3aa816e2f89f85b5724a55">
         <dex dex="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_317e10b3f0ee1ffcaf3712c7a778a4f80446c697.jar" />
     </item>
     <item
-        jar="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.1.0/jars/classes.jar"
+        jar="/home/WORK/SDK/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
         jumboMode="true"
         revision="25.0.2"
-        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
-        <dex dex="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-appindexing-8.1.0_cabe9a894c62e05c4151ca1271544fb4feeff315.jar" />
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.1_80243f82dec8aba9b802e8dfce3617e34f330ebc.jar" />
+    </item>
+    <item
+        jar="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
+        jumboMode="true"
+        revision="25.0.2"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1_5c507f1631334c155188d618b9664c38ac8813c7.jar" />
+    </item>
+    <item
+        jar="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="25.0.2"
+        sha1="06613278e79fd3ad2b52d6213fdc29f49e04048e">
+        <dex dex="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/pre-dexed/debug/instant-run_bca7e3b64a52c4c694fcb76006bac76282c38114.jar" />
     </item>
     <item
         jar="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/jars/classes.jar"
@@ -21,6 +42,13 @@
         revision="25.0.2"
         sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
         <dex dex="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-8.1.0_2644fa6a479588e7c673f3eaed26a5181bbfa02e.jar" />
+    </item>
+    <item
+        jar="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.1.0/jars/classes.jar"
+        jumboMode="true"
+        revision="25.0.2"
+        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
+        <dex dex="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-appindexing-8.1.0_cabe9a894c62e05c4151ca1271544fb4feeff315.jar" />
     </item>
 
 </items>

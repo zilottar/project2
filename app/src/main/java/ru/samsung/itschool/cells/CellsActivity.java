@@ -95,7 +95,6 @@ public class CellsActivity extends Activity implements OnClickListener,
 			Cursor cursor = mDb.rawQuery("SELECT desc FROM base where  elements='"+tappedCell.getText()+"'", null);
 			builder.setTitle("Литий")
 					.setMessage(cursor.getString(0))
-					.setIcon(R.drawable.ic_launcher)
 					.setCancelable(false)
 					.setNegativeButton("Продолжить изучение",
 							new DialogInterface.OnClickListener() {
@@ -111,7 +110,6 @@ public class CellsActivity extends Activity implements OnClickListener,
 			Cursor cursor = mDb.rawQuery("SELECT desc FROM base where  elements='"+tappedCell.getText()+"'", null);
 			builder.setTitle("Бериллий")
 					.setMessage(cursor.getString(0))
-					.setIcon(R.drawable.ic_launcher)
 					.setCancelable(false)
 					.setNegativeButton("Продолжить изучение",
 							new DialogInterface.OnClickListener() {
@@ -127,7 +125,6 @@ public class CellsActivity extends Activity implements OnClickListener,
 			Cursor cursor = mDb.rawQuery("SELECT desc FROM base where  elements='"+tappedCell.getText()+"'", null);
 			builder.setTitle("Натрий")
 					.setMessage(cursor.getString(0))
-					.setIcon(R.drawable.ic_launcher)
 					.setCancelable(false)
 					.setNegativeButton("Продолжить изучение",
 							new DialogInterface.OnClickListener() {
@@ -143,7 +140,6 @@ public class CellsActivity extends Activity implements OnClickListener,
 			Cursor cursor = mDb.rawQuery("SELECT desc FROM base where  elements='"+tappedCell.getText()+"'", null);
 			builder.setTitle("Магний")
 					.setMessage(cursor.getString(0))
-					.setIcon(R.drawable.ic_launcher)
 					.setCancelable(false)
 					.setNegativeButton("Продолжить изучение",
 							new DialogInterface.OnClickListener() {
@@ -159,7 +155,6 @@ public class CellsActivity extends Activity implements OnClickListener,
 			Cursor cursor = mDb.rawQuery("SELECT desc FROM base where  elements='"+tappedCell.getText()+"'", null);
 			builder.setTitle("Калий")
 					.setMessage(cursor.getString(0))
-					.setIcon(R.drawable.ic_launcher)
 					.setCancelable(false)
 					.setNegativeButton("Продолжить изучение",
 							new DialogInterface.OnClickListener() {
@@ -175,7 +170,6 @@ public class CellsActivity extends Activity implements OnClickListener,
 			Cursor cursor = mDb.rawQuery("SELECT desc FROM base where  elements='"+tappedCell.getText()+"'", null);
 			builder.setTitle("Кальций")
 					.setMessage(cursor.getString(0))
-					.setIcon(R.drawable.ic_launcher)
 					.setCancelable(false)
 					.setNegativeButton("Продолжить изучение",
 							new DialogInterface.OnClickListener() {
@@ -191,7 +185,6 @@ public class CellsActivity extends Activity implements OnClickListener,
 			Cursor cursor = mDb.rawQuery("SELECT desc FROM base where  elements='"+tappedCell.getText()+"'", null);
 			builder.setTitle("Рубидий")
 					.setMessage(cursor.getString(0))
-					.setIcon(R.drawable.ic_launcher)
 					.setCancelable(false)
 					.setNegativeButton("Продолжить изучение",
 							new DialogInterface.OnClickListener() {
@@ -207,7 +200,6 @@ public class CellsActivity extends Activity implements OnClickListener,
 			Cursor cursor = mDb.rawQuery("SELECT desc FROM base where  elements='"+tappedCell.getText()+"'", null);
 			builder.setTitle("Стронций")
 					.setMessage(cursor.getString(0))
-					.setIcon(R.drawable.ic_launcher)
 					.setCancelable(false)
 					.setNegativeButton("Продолжить изучение",
 							new DialogInterface.OnClickListener() {
@@ -223,7 +215,6 @@ public class CellsActivity extends Activity implements OnClickListener,
 			Cursor cursor = mDb.rawQuery("SELECT desc FROM base where  elements='"+tappedCell.getText()+"'", null);
 			builder.setTitle("Цезий")
 					.setMessage(cursor.getString(0))
-					.setIcon(R.drawable.ic_launcher)
 					.setCancelable(false)
 					.setNegativeButton("Продолжить изучение",
 							new DialogInterface.OnClickListener() {
@@ -239,7 +230,6 @@ public class CellsActivity extends Activity implements OnClickListener,
 			Cursor cursor = mDb.rawQuery("SELECT desc FROM base where  elements='"+tappedCell.getText()+"'", null);
 			builder.setTitle("Барий")
 					.setMessage(cursor.getString(0))
-					.setIcon(R.drawable.ic_launcher)
 					.setCancelable(false)
 					.setNegativeButton("Продолжить изучение",
 							new DialogInterface.OnClickListener() {
@@ -257,7 +247,6 @@ public class CellsActivity extends Activity implements OnClickListener,
 			String a = "hint";
 			builder.setTitle("Hint")
 					.setMessage(cursor.getString(0))
-					.setIcon(R.drawable.ic_launcher)
 					.setCancelable(false)
 					.setNegativeButton("Продолжить изучение",
 							new DialogInterface.OnClickListener() {
