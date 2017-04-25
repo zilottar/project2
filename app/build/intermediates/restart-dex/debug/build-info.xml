@@ -4,30 +4,22 @@
     api-level="19"
     density="mdpi"
     format="7"
-    timestamp="123181457778748"
+    timestamp="123293162509787"
     token="2432737719910573608" >
 
     <task
         name="javac"
-        duration="1059" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="394" />
+        duration="0" />
     <task
         name="verifier"
-        duration="49" />
+        duration="0" />
 
-    <artifact
-        location="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/outputs/apk/app-debug.apk"
-        type="MAIN" />
-
-    <build timestamp="123181457778748" >
-        <artifact
-            location="/home/student2/Рабочий стол/Cells_Eclipse-master2/app/build/outputs/apk/app-debug.apk"
-            type="MAIN" />
-    </build>
+    <build timestamp="123293162509787" />
 
 </instant-run>
